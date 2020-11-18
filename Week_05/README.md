@@ -1,7 +1,7 @@
 学习笔记
 
 | 作业题 | 文件目录 |
-| :----:| :----: | :----: |
+| :----:| :----: | 
 | （必做）给前面课程提供的 Student/Klass/School 实现自动配置和 Starter | fx-starter |
 | 使用xml装配bean | xml2Bean | 
 | 使用Annotation装配bean | springAnnotation2Bean | 
