@@ -1,0 +1,57 @@
+spring:
+  datasource: # 多数据源
+    # type: com.alibaba.druid.pool.DruidDataSource
+    # 主库
+    master:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://localhost:3307/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+      username: root
+      password:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      # 配置初始值
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      # 获取连接等待超时时间
+      max-wait: 6000
+      # 监控关闭空闲连接时间间隔
+      time-between-eviction-runs-millis: 60000
+      # 每个连接池最小的生命周期
+      min-evictable-idle-time-millis: 360000
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      remove-abandoned: true
+      remove-abandoned-timeout: 1800
+    # 从库
+    slave:
+      type: com.alibaba.druid.pool.DruidDataSource
+      # 注意不是jdbcUrl, Durid是url
+      url: jdbc:mysql://localhost:3308/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+      username: root
+      password:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      # 配置初始值
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      # 获取连接等待超时时间
+      max-wait: 6000
+      # 监控关闭空闲连接时间间隔
+      time-between-eviction-runs-millis: 60000
+      # 每个连接池最小的生命周期
+      min-evictable-idle-time-millis: 360000
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      remove-abandoned: true
+      remove-abandoned-timeout: 1800
+
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  type-aliases-package: com.fatsnake.multidatasource.domain #按自己包名来
+  check-config-location: true
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
