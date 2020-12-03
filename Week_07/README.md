@@ -2,6 +2,8 @@
 
 ## jdbcDemo  是插入100数据测试效率
 主要是测试了多值和addbatch这两种方式
+程序运行时间：22045ms  OrderBuilderMultiValue
+程序运行时间：152869ms OrderBuilderBatch
 结论：基于insert into table1 values的多值执行效率高于addbatch
 
 ## multidatasource  读写分离-动态切换数据源版本1.0
