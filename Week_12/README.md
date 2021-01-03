@@ -1,4 +1,4 @@
-# master-slave 主从复制
+# 一、master-slave 主从复制
 
 - 1.复制三份redis文件，修改三个文件夹命名 
 
@@ -94,7 +94,7 @@ info Replication 命令，查看状态
 get  set 命令
 ![get set 命令](/Week_12/img/ms_get_set.png)
 
-# sentinel 哨兵模式
+# 二、sentinel 哨兵模式
 - 1.创建目录，创建三份sentinel.conf
 - 2.修改sentinel.conf
 ```shell script
@@ -147,7 +147,11 @@ kill 主节点 7001
 ![info 命令](/Week_12/img/sentinel_reset_slave.png)
 重启7001，7001已经由主变成了从节点
 
-## cluster 集群
+## 三、cluster 集群
+
+之前在公司内部做过cluster的技术分享，编写的文章 https://www.jianshu.com/p/fcf24fe0493d
+
+
 
 
 
