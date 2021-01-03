@@ -166,6 +166,7 @@ info Replication
 重新查看info Replication，发现7003已经变成新的master
 
 ![info 命令](/Week_12/img/sentinel_reset_slave.png)
+
 重启7001，7001已经由主变成了从节点
 
 ## 三、cluster 集群
