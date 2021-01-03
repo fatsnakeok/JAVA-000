@@ -2,7 +2,6 @@
 
 - 1.复制三份redis文件，修改三个文件夹命名 
 
-
 - 2.修改master 7001  redis.conf
  ```shell script
 bind 0.0.0.0 #任意ip都可以连接
@@ -75,28 +74,39 @@ requirepass XX #密码
 ```
 
 - 4.启动
+
 cd /Users/izaodao/Documents/redis-ms/redis-m-7001
+
 redis-server  ./redis.conf
 
 cd /Users/izaodao/Documents/redis-ms/redis-s-7002
+
 redis-server  ./redis.conf
 
 cd /Users/izaodao/Documents/redis-ms/redis-s-7003
+
 redis-server  ./redis.conf
 
 - 5.测试
+
 ps -ef | grep redis
+
 ![ps -ef | grep redis](/Week_12/img/grep.png)
 
 info Replication 命令，查看状态
+
 ![info Replication 命令](/Week_12/img/ms.png)
 
 get  set 命令
+
 ![get set 命令](/Week_12/img/ms_get_set.png)
 
 # 二、sentinel 哨兵模式
+
 - 1.创建目录，创建三份sentinel.conf
+
 - 2.修改sentinel.conf
+
 ```shell script
 bind 127.0.0.1 192.168.1.1
 protected-mode no
@@ -110,24 +120,32 @@ dir /Users/izaodao/Documents/redis-ms/sentinel/26001/tmp
 #那么就客观认为主节点down掉了，开始发起投票选举新主节点的操作。多个主节点配置多个。
 sentinel monitor mymaster 127.0.0.1 7001 2
 ```
+
 26001、26002、26003 三个sentinel.conf均修改上面配置，只是端口不一样
 
 - 3.启动一主二从，三个redis节点
+
 cd /Users/izaodao/Documents/redis-ms/redis-m-7001
+
 redis-server  ./redis.conf
 
 cd /Users/izaodao/Documents/redis-ms/redis-s-7002
+
 redis-server  ./redis.conf
 
 cd /Users/izaodao/Documents/redis-ms/redis-s-7003
+
 redis-server  ./redis.conf
 
 - 4.启动三个sentinel节点
 对redis-sentinel做软连接（可以在任意目录执行redis-sentinel ）
+
 ln -s /Users/izaodao/Documents/redis-ms/redis-5   /usr/bin/
 
 redis-sentinel /Users/izaodao/Documents/redis-ms/sentinel/26001/sentinel.conf
+
 redis-sentinel /Users/izaodao/Documents/redis-ms/sentinel/26002/sentinel.conf
+
 redis-sentinel /Users/izaodao/Documents/redis-ms/sentinel/26003/sentinel.conf
 
 - 5.测试故障转移
