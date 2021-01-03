@@ -94,6 +94,61 @@ info Replication 命令，查看状态
 get  set 命令
 ![get set 命令](/Week_12/img/ms_get_set.png)
 
+# sentinel 哨兵模式
+- 1.创建目录，创建三份sentinel.conf
+- 2.修改sentinel.conf
+```shell script
+bind 127.0.0.1 192.168.1.1
+protected-mode no
+port 26001
+daemonize yes
+pidfile /var/run/redis-sentinel_26001.pid
+logfile "/Users/izaodao/Documents/redis-ms/sentinel/26001/log/redis-sentinel.log"
+dir /Users/izaodao/Documents/redis-ms/sentinel/26001/tmp
+#设置 主名称 ip地址 端口号 参入选举的哨兵数
+#配置哨兵需要监控的主节点ip和端口，最后的2代表，如果有2个哨兵主观认为主节点down了，
+#那么就客观认为主节点down掉了，开始发起投票选举新主节点的操作。多个主节点配置多个。
+sentinel monitor mymaster 127.0.0.1 7001 2
+```
+26001、26002、26003 三个sentinel.conf均修改上面配置，只是端口不一样
+
+- 3.启动一主二从，三个redis节点
+cd /Users/izaodao/Documents/redis-ms/redis-m-7001
+redis-server  ./redis.conf
+
+cd /Users/izaodao/Documents/redis-ms/redis-s-7002
+redis-server  ./redis.conf
+
+cd /Users/izaodao/Documents/redis-ms/redis-s-7003
+redis-server  ./redis.conf
+
+- 4.启动三个sentinel节点
+对redis-sentinel做软连接（可以在任意目录执行redis-sentinel ）
+ln -s /Users/izaodao/Documents/redis-ms/redis-5   /usr/bin/
+
+redis-sentinel /Users/izaodao/Documents/redis-ms/sentinel/26001/sentinel.conf
+redis-sentinel /Users/izaodao/Documents/redis-ms/sentinel/26002/sentinel.conf
+redis-sentinel /Users/izaodao/Documents/redis-ms/sentinel/26003/sentinel.conf
+
+- 5.测试故障转移
+连上 26001 哨兵节点查看状态
+redis-cli -h 127.0.0.1 -c -p 26001
+
+info Replication
+![info Replication 命令](/Week_12/img/sentinel_info_before.png)
+此时 7001 是master
+
+![kill 命令](/Week_12/img/sentinel_kill.png)
+kill 主节点 7001
+
+![info 命令](/Week_12/img/sentinel_new_master.png)
+重新查看info Replication，发现7003已经变成新的master
+
+![info 命令](/Week_12/img/sentinel_reset_slave.png)
+重启7001，7001已经由主变成了从节点
+
+## cluster 集群
+
 
 
 

@@ -1,0 +1,79 @@
+30782:X 03 Jan 2021 20:10:21.033 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+30782:X 03 Jan 2021 20:10:21.033 # Redis version=5.0.7, bits=64, commit=00000000, modified=0, pid=30782, just started
+30782:X 03 Jan 2021 20:10:21.033 # Configuration loaded
+30783:X 03 Jan 2021 20:10:21.036 * Increased maximum number of open files to 10032 (it was originally set to 4864).
+30783:X 03 Jan 2021 20:10:21.037 # Could not create server TCP listening socket 192.168.1.1:26001: bind: Can't assign requested address
+30783:X 03 Jan 2021 20:10:21.038 * Running mode=sentinel, port=26001.
+30783:X 03 Jan 2021 20:10:21.041 # Sentinel ID is 434aa0b0336708a13e95eef0238d3114472cacf9
+30783:X 03 Jan 2021 20:10:21.041 # +monitor master mymaster 127.0.0.1 7001 quorum 2
+30783:X 03 Jan 2021 20:10:21.042 * +slave slave 127.0.0.1:7002 127.0.0.1 7002 @ mymaster 127.0.0.1 7001
+30783:X 03 Jan 2021 20:10:21.044 * +slave slave 127.0.0.1:7003 127.0.0.1 7003 @ mymaster 127.0.0.1 7001
+30792:X 03 Jan 2021 20:10:26.612 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+30792:X 03 Jan 2021 20:10:26.612 # Redis version=5.0.7, bits=64, commit=00000000, modified=0, pid=30792, just started
+30792:X 03 Jan 2021 20:10:26.612 # Configuration loaded
+30793:X 03 Jan 2021 20:10:26.615 * Increased maximum number of open files to 10032 (it was originally set to 4864).
+30793:X 03 Jan 2021 20:10:26.615 # Could not create server TCP listening socket 192.168.1.1:26002: bind: Can't assign requested address
+30793:X 03 Jan 2021 20:10:26.616 * Running mode=sentinel, port=26002.
+30793:X 03 Jan 2021 20:10:26.618 # Sentinel ID is dd45478a426ce217388cded197d3c3a1cf5c7017
+30793:X 03 Jan 2021 20:10:26.618 # +monitor master mymaster 127.0.0.1 7001 quorum 2
+30793:X 03 Jan 2021 20:10:26.620 * +slave slave 127.0.0.1:7002 127.0.0.1 7002 @ mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:10:26.621 * +slave slave 127.0.0.1:7003 127.0.0.1 7003 @ mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:10:27.155 * +sentinel sentinel 434aa0b0336708a13e95eef0238d3114472cacf9 127.0.0.1 26001 @ mymaster 127.0.0.1 7001
+30783:X 03 Jan 2021 20:10:28.643 * +sentinel sentinel dd45478a426ce217388cded197d3c3a1cf5c7017 127.0.0.1 26002 @ mymaster 127.0.0.1 7001
+30801:X 03 Jan 2021 20:10:31.840 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+30801:X 03 Jan 2021 20:10:31.840 # Redis version=5.0.7, bits=64, commit=00000000, modified=0, pid=30801, just started
+30801:X 03 Jan 2021 20:10:31.841 # Configuration loaded
+30802:X 03 Jan 2021 20:10:31.843 * Increased maximum number of open files to 10032 (it was originally set to 4864).
+30802:X 03 Jan 2021 20:10:31.844 # Could not create server TCP listening socket 192.168.1.1:26003: bind: Can't assign requested address
+30802:X 03 Jan 2021 20:10:31.844 * Running mode=sentinel, port=26003.
+30802:X 03 Jan 2021 20:10:31.845 # Sentinel ID is 6c0562610c494d58f303512fa53b519f42b1fc05
+30802:X 03 Jan 2021 20:10:31.845 # +monitor master mymaster 127.0.0.1 7001 quorum 2
+30802:X 03 Jan 2021 20:10:31.847 * +slave slave 127.0.0.1:7002 127.0.0.1 7002 @ mymaster 127.0.0.1 7001
+30802:X 03 Jan 2021 20:10:31.848 * +slave slave 127.0.0.1:7003 127.0.0.1 7003 @ mymaster 127.0.0.1 7001
+30802:X 03 Jan 2021 20:10:32.738 * +sentinel sentinel dd45478a426ce217388cded197d3c3a1cf5c7017 127.0.0.1 26002 @ mymaster 127.0.0.1 7001
+30802:X 03 Jan 2021 20:10:33.218 * +sentinel sentinel 434aa0b0336708a13e95eef0238d3114472cacf9 127.0.0.1 26001 @ mymaster 127.0.0.1 7001
+30783:X 03 Jan 2021 20:10:33.867 * +sentinel sentinel 6c0562610c494d58f303512fa53b519f42b1fc05 127.0.0.1 26003 @ mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:10:33.867 * +sentinel sentinel 6c0562610c494d58f303512fa53b519f42b1fc05 127.0.0.1 26003 @ mymaster 127.0.0.1 7001
+30783:X 03 Jan 2021 20:12:03.837 # +sdown master mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:04.785 # +sdown master mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:04.876 # +odown master mymaster 127.0.0.1 7001 #quorum 2/2
+30793:X 03 Jan 2021 20:12:04.876 # +new-epoch 1
+30793:X 03 Jan 2021 20:12:04.876 # +try-failover master mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:04.878 # +vote-for-leader dd45478a426ce217388cded197d3c3a1cf5c7017 1
+30802:X 03 Jan 2021 20:12:04.880 # +new-epoch 1
+30783:X 03 Jan 2021 20:12:04.880 # +new-epoch 1
+30802:X 03 Jan 2021 20:12:04.881 # +vote-for-leader dd45478a426ce217388cded197d3c3a1cf5c7017 1
+30783:X 03 Jan 2021 20:12:04.881 # +vote-for-leader dd45478a426ce217388cded197d3c3a1cf5c7017 1
+30793:X 03 Jan 2021 20:12:04.881 # 6c0562610c494d58f303512fa53b519f42b1fc05 voted for dd45478a426ce217388cded197d3c3a1cf5c7017 1
+30793:X 03 Jan 2021 20:12:04.881 # 434aa0b0336708a13e95eef0238d3114472cacf9 voted for dd45478a426ce217388cded197d3c3a1cf5c7017 1
+30802:X 03 Jan 2021 20:12:04.904 # +sdown master mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:04.931 # +elected-leader master mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:04.931 # +failover-state-select-slave master mymaster 127.0.0.1 7001
+30783:X 03 Jan 2021 20:12:04.942 # +odown master mymaster 127.0.0.1 7001 #quorum 2/2
+30783:X 03 Jan 2021 20:12:04.942 # Next failover delay: I will not start a failover before Sun Jan  3 20:18:05 2021
+30802:X 03 Jan 2021 20:12:04.988 # +odown master mymaster 127.0.0.1 7001 #quorum 3/2
+30802:X 03 Jan 2021 20:12:04.989 # Next failover delay: I will not start a failover before Sun Jan  3 20:18:05 2021
+30793:X 03 Jan 2021 20:12:05.002 # +selected-slave slave 127.0.0.1:7003 127.0.0.1 7003 @ mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:05.003 * +failover-state-send-slaveof-noone slave 127.0.0.1:7003 127.0.0.1 7003 @ mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:05.058 * +failover-state-wait-promotion slave 127.0.0.1:7003 127.0.0.1 7003 @ mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:05.363 # +promoted-slave slave 127.0.0.1:7003 127.0.0.1 7003 @ mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:05.363 # +failover-state-reconf-slaves master mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:05.414 * +slave-reconf-sent slave 127.0.0.1:7002 127.0.0.1 7002 @ mymaster 127.0.0.1 7001
+30802:X 03 Jan 2021 20:12:05.415 # +config-update-from sentinel dd45478a426ce217388cded197d3c3a1cf5c7017 127.0.0.1 26002 @ mymaster 127.0.0.1 7001
+30783:X 03 Jan 2021 20:12:05.415 # +config-update-from sentinel dd45478a426ce217388cded197d3c3a1cf5c7017 127.0.0.1 26002 @ mymaster 127.0.0.1 7001
+30802:X 03 Jan 2021 20:12:05.415 # +switch-master mymaster 127.0.0.1 7001 127.0.0.1 7003
+30783:X 03 Jan 2021 20:12:05.415 # +switch-master mymaster 127.0.0.1 7001 127.0.0.1 7003
+30802:X 03 Jan 2021 20:12:05.416 * +slave slave 127.0.0.1:7002 127.0.0.1 7002 @ mymaster 127.0.0.1 7003
+30783:X 03 Jan 2021 20:12:05.416 * +slave slave 127.0.0.1:7002 127.0.0.1 7002 @ mymaster 127.0.0.1 7003
+30802:X 03 Jan 2021 20:12:05.416 * +slave slave 127.0.0.1:7001 127.0.0.1 7001 @ mymaster 127.0.0.1 7003
+30783:X 03 Jan 2021 20:12:05.416 * +slave slave 127.0.0.1:7001 127.0.0.1 7001 @ mymaster 127.0.0.1 7003
+30793:X 03 Jan 2021 20:12:06.019 # -odown master mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:06.378 * +slave-reconf-inprog slave 127.0.0.1:7002 127.0.0.1 7002 @ mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:06.378 * +slave-reconf-done slave 127.0.0.1:7002 127.0.0.1 7002 @ mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:06.477 # +failover-end master mymaster 127.0.0.1 7001
+30793:X 03 Jan 2021 20:12:06.477 # +switch-master mymaster 127.0.0.1 7001 127.0.0.1 7003
+30793:X 03 Jan 2021 20:12:06.478 * +slave slave 127.0.0.1:7002 127.0.0.1 7002 @ mymaster 127.0.0.1 7003
+30793:X 03 Jan 2021 20:12:06.478 * +slave slave 127.0.0.1:7001 127.0.0.1 7001 @ mymaster 127.0.0.1 7003
+30802:X 03 Jan 2021 20:12:35.437 # +sdown slave 127.0.0.1:7001 127.0.0.1 7001 @ mymaster 127.0.0.1 7003
+30783:X 03 Jan 2021 20:12:35.446 # +sdown slave 127.0.0.1:7001 127.0.0.1 7001 @ mymaster 127.0.0.1 7003
+30793:X 03 Jan 2021 20:12:36.532 # +sdown slave 127.0.0.1:7001 127.0.0.1 7001 @ mymaster 127.0.0.1 7003
