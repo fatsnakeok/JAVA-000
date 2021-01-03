@@ -135,13 +135,16 @@ redis-sentinel /Users/izaodao/Documents/redis-ms/sentinel/26003/sentinel.conf
 redis-cli -h 127.0.0.1 -c -p 26001
 
 info Replication
-![info Replication 命令](/Week_12/img/sentinel_info_before.png)
-此时 7001 是master
 
-![kill 命令](/Week_12/img/sentinel_kill.png)
-kill 主节点 7001
+![此时 7001 是master](/Week_12/img/sentinel-info-before.png)
+
+
+![kill 主节点 7001](/Week_12/img/sentinel_kill.png)
+
+
 
 ![info 命令](/Week_12/img/sentinel_new_master.png)
+
 重新查看info Replication，发现7003已经变成新的master
 
 ![info 命令](/Week_12/img/sentinel_reset_slave.png)
