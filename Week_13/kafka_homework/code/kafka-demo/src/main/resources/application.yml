@@ -1,0 +1,12 @@
+# 应用名称
+server:
+  port: 8090
+spring:
+  kafka:
+    consumer:
+      enable-auto-commit: true
+      group-id: kafka
+      auto-offset-reset: earliest
+      bootstrap-servers: localhost:7090
+    producer:
+      bootstrap-servers: localhost:7090
